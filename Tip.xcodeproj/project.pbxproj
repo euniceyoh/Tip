@@ -15,6 +15,8 @@
 		9EC90F8124C9286F003A7518 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9EC90F7F24C9286F003A7518 /* LaunchScreen.storyboard */; };
 		9EC90F8C24C9286F003A7518 /* TipTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9EC90F8B24C9286F003A7518 /* TipTests.swift */; };
 		9EC90F9724C9286F003A7518 /* TipUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9EC90F9624C9286F003A7518 /* TipUITests.swift */; };
+		9EC90FA524C93021003A7518 /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9EC90FA424C93021003A7518 /* SettingsViewController.swift */; };
+		9ED9F4CB24CED41B005DDEA9 /* colors.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9ED9F4CA24CED41B005DDEA9 /* colors.xcassets */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -49,6 +51,8 @@
 		9EC90F9224C9286F003A7518 /* TipUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TipUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		9EC90F9624C9286F003A7518 /* TipUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TipUITests.swift; sourceTree = "<group>"; };
 		9EC90F9824C9286F003A7518 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		9EC90FA424C93021003A7518 /* SettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
+		9ED9F4CA24CED41B005DDEA9 /* colors.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = colors.xcassets; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -103,6 +107,8 @@
 				9EC90F7624C9286C003A7518 /* SceneDelegate.swift */,
 				9EC90F7824C9286C003A7518 /* ViewController.swift */,
 				9EC90F7A24C9286C003A7518 /* Main.storyboard */,
+				9ED9F4CA24CED41B005DDEA9 /* colors.xcassets */,
+				9EC90FA424C93021003A7518 /* SettingsViewController.swift */,
 				9EC90F7D24C9286F003A7518 /* Assets.xcassets */,
 				9EC90F7F24C9286F003A7518 /* LaunchScreen.storyboard */,
 				9EC90F8224C9286F003A7518 /* Info.plist */,
@@ -233,6 +239,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				9EC90F8124C9286F003A7518 /* LaunchScreen.storyboard in Resources */,
+				9ED9F4CB24CED41B005DDEA9 /* colors.xcassets in Resources */,
 				9EC90F7E24C9286F003A7518 /* Assets.xcassets in Resources */,
 				9EC90F7C24C9286C003A7518 /* Main.storyboard in Resources */,
 			);
@@ -262,6 +269,7 @@
 				9EC90F7924C9286C003A7518 /* ViewController.swift in Sources */,
 				9EC90F7524C9286C003A7518 /* AppDelegate.swift in Sources */,
 				9EC90F7724C9286C003A7518 /* SceneDelegate.swift in Sources */,
+				9EC90FA524C93021003A7518 /* SettingsViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
