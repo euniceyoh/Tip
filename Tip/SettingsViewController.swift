@@ -61,8 +61,6 @@ class SettingsViewController: UIViewController {
     
     override func viewWillDisappear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        //let intValue = defaults.integer(forKey: "newTipIndex")
-        //settingsSegmentedControl.selectedSegmentIndex = intValue
         
         print("Settings View Controller - View Will Disappear")
     }
