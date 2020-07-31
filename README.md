@@ -33,7 +33,9 @@ GIF created with [Giphy](https://giphy.com).
 
 ## Notes
 
-Describe any challenges encountered while building the app.
+Challenges:
+- understanding how to save/load data from settings view controller to main view controller 
+- choosing which life cycle method to place code to save setting changes
 
 ## License
 
