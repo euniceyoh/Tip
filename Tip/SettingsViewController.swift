@@ -18,8 +18,6 @@ class SettingsViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        //defaults.set(0, forKey: "newTipIndex")
-        //defaults.synchronize()
         print("Settings View Controller - View Did Load")
         
         let changeTheme = defaults.bool(forKey: "darkMode")
@@ -34,15 +32,13 @@ class SettingsViewController: UIViewController {
     }
     
     // save the new default tip percentage each time the user changes it on the settings screen
-    // add a light/dark color theme to the settings view
-    // In viewWillAppear, update views with the correct theme colors
-    
     @IBAction func defaultTipChanged(_ sender: UISegmentedControl) {
         let index  = settingsSegmentedControl.selectedSegmentIndex
         defaults.set(index, forKey: "TipIndex")
         defaults.synchronize()
     }
     
+    // add a light/dark color theme to the settings view
     @IBAction func switchToggled(_ sender: UISwitch) {
         if darkModeToggle.isOn {
             print("dark mode")
@@ -75,10 +71,6 @@ class SettingsViewController: UIViewController {
         super.viewDidAppear(animated)
         print("Settings View Controller - View Did Disappear")
     }
-    
-//    override func viewWillAppear(_ animated: Bool) {
-//        settingsSegmentedControl.selectedSegmentIndex = index
-//    }
 
     /*
     // MARK: - Navigation
