@@ -30,9 +30,9 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Total" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oR8-Up-ukP" userLabel="Total Label">
-                                <rect key="frame" x="202" y="514" width="166" height="52"/>
+                                <rect key="frame" x="111" y="514" width="257" height="52"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="25"/>
+                                <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="45"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
@@ -76,7 +76,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="0.00" textAlignment="right" minimumFontSize="60" translatesAutoresizingMaskIntoConstraints="NO" id="49S-pf-nBS">
-                                <rect key="frame" x="210" y="189" width="166" height="73"/>
+                                <rect key="frame" x="88" y="189" width="288" height="73"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" red="0.96848052740000001" green="0.92150754239999999" blue="0.63787926699999997" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="50"/>
@@ -94,15 +94,10 @@
                         </connections>
                     </view>
                     <toolbarItems/>
-                    <navigationItem key="navigationItem" title="Tip Calculator" id="Vro-RQ-uqP">
-                        <barButtonItem key="leftBarButtonItem" title="Dark Mode" id="HOm-b9-ud7">
-                            <connections>
-                                <action selector="switchMode:" destination="BYZ-38-t0r" id="CEl-jZ-9DG"/>
-                            </connections>
-                        </barButtonItem>
+                    <navigationItem key="navigationItem" title="Tip Calculator" largeTitleDisplayMode="always" id="Vro-RQ-uqP">
                         <barButtonItem key="rightBarButtonItem" title="Settings" id="N3Z-S3-VZ5">
                             <connections>
-                                <segue destination="1XZ-UI-EHY" kind="push" id="eke-qU-d5Q"/>
+                                <segue destination="1XZ-UI-EHY" kind="show" id="xhN-27-IrL"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
@@ -122,31 +117,70 @@
                     </connections>
                 </tapGestureRecognizer>
             </objects>
-            <point key="canvasLocation" x="1042.0289855072465" y="128.57142857142856"/>
+            <point key="canvasLocation" x="-378.26086956521743" y="874.55357142857144"/>
         </scene>
-        <!--Settings View Controller-->
+        <!--Settings-->
         <scene sceneID="og6-aj-7DC">
             <objects>
                 <viewController id="1XZ-UI-EHY" customClass="SettingsViewController" customModule="Tip" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="TUP-Co-PsG">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <segmentedControl opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="7Xg-ne-2YT">
+                                <rect key="frame" x="179" y="121" width="215" height="32"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <segments>
+                                    <segment title="15%"/>
+                                    <segment title="18%"/>
+                                    <segment title="20%"/>
+                                </segments>
+                                <connections>
+                                    <action selector="defaultTipChanged:" destination="1XZ-UI-EHY" eventType="valueChanged" id="4Jb-wy-mX9"/>
+                                </connections>
+                            </segmentedControl>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Default Tip %:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ufV-5O-Wtt">
+                                <rect key="frame" x="20" y="121" width="118" height="33"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Change Theme:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xgM-I5-NWY">
+                                <rect key="frame" x="20" y="181" width="121" height="23"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="dZH-3E-nai">
+                                <rect key="frame" x="179" y="177" width="49" height="31"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <connections>
+                                    <action selector="switchToggled:" destination="1XZ-UI-EHY" eventType="valueChanged" id="0mf-nb-KYn"/>
+                                </connections>
+                            </switch>
+                        </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <viewLayoutGuide key="safeArea" id="tSN-ab-7ie"/>
                     </view>
-                    <navigationItem key="navigationItem" id="sOn-ij-BBc"/>
+                    <navigationItem key="navigationItem" title="Settings" largeTitleDisplayMode="never" id="sOn-ij-BBc"/>
+                    <connections>
+                        <outlet property="darkModeToggle" destination="dZH-3E-nai" id="ygu-jN-txH"/>
+                        <outlet property="settingsSegmentedControl" destination="7Xg-ne-2YT" id="4S0-Gx-K9l"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="akY-ww-zzJ" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1957" y="129"/>
+            <point key="canvasLocation" x="480" y="875"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="G29-7I-lBD">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="4h4-bX-VWd" sceneMemberID="viewController">
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="WqE-HX-BJc">
-                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" largeTitles="YES" id="WqE-HX-BJc">
+                        <rect key="frame" x="0.0" y="44" width="414" height="96"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <nil name="viewControllers"/>

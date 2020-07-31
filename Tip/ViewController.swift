@@ -10,43 +10,83 @@ class ViewController: UIViewController {
     @IBOutlet weak var totalLabel: UILabel!
     @IBOutlet weak var tipAmountSegmentedControl: UISegmentedControl!
     
-    var lightMode:Bool = true
+    let defaults = UserDefaults.standard
     
     override func viewDidLoad() {
         super.viewDidLoad()
         self.title = "Tip Calculator"
-        switchTheme()
+        billAmountTextField.becomeFirstResponder()
+        
+        // set colors
+//        view.backgroundColor = UIColor(named: "PaleYellow")
+//        billAmountTextField.backgroundColor = UIColor(named: "PaleYellow")
+//        tipAmountSegmentedControl.backgroundColor = UIColor(named: "PaleYellow")
+//        tipAmountSegmentedControl.selectedSegmentTintColor = UIColor(named: "DarkerPaleYellow")
+//        lineView.backgroundColor = UIColor(named: "DarkerPaleYellow")
+        // set colors
         
         tipPercentageLabel.text = String("$0.00");
         totalLabel.text = String("$0.00")
-        
+        //tipAmountSegmentedControl.selectedSegmentIndex = 0
     }
-//    struct ColorManager {
-//        static let paleYellow = Color("PaleYellow")
-//        static let darkerYellow = Color("DarkerPaleYellow")
-//    }
     
-    fileprivate func switchTheme() {
-        if lightMode {
-            view.backgroundColor = UIColor(named: "PaleYellow")
-            billAmountTextField.backgroundColor = UIColor(named: "PaleYellow")
-            tipAmountSegmentedControl.backgroundColor = UIColor(named: "PaleYellow")
-            tipAmountSegmentedControl.selectedSegmentTintColor = UIColor(named: "DarkerPaleYellow")
-            lineView.backgroundColor = UIColor(named: "DarkerPaleYellow")
-            
-        } else {
+    // in main, have the tip percentage reflect the new default value
+    // load the tip percentage from UserDefaults whenever the view appears.
+    
+    // This is a good place to retrieve the default tip percentage from UserDefaults
+    // and use it to update the tip amount
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        print("view will appear")
+        
+        let tipValue = defaults.integer(forKey: "TipIndex")
+        //print("updated tip")
+        //print(tipValue)
+        tipAmountSegmentedControl.selectedSegmentIndex = tipValue
+        calculateTip(Any.self)
+        
+        let changeTheme = defaults.bool(forKey:"darkMode")
+        //print("darkmode: ")
+        //print(changeTheme)
+        
+        // if true
+        if changeTheme {
+            // change colors
             view.backgroundColor = .gray
             billAmountTextField.backgroundColor = .gray
             tipAmountSegmentedControl.backgroundColor = .gray
             tipAmountSegmentedControl.selectedSegmentTintColor = .darkGray
             lineView.backgroundColor = .darkGray
+        } else {
+            view.backgroundColor = UIColor(named: "PaleYellow")
+            billAmountTextField.backgroundColor = UIColor(named: "PaleYellow")
+            tipAmountSegmentedControl.backgroundColor = UIColor(named: "PaleYellow")
+            tipAmountSegmentedControl.selectedSegmentTintColor = UIColor(named: "DarkerPaleYellow")
+            lineView.backgroundColor = UIColor(named: "DarkerPaleYellow")
         }
+        
+    }
+
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        print("view did appear")
+    }
+
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        print("view will disappear")
+    }
+
+    override func viewDidDisappear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        print("view did disappear")
     }
     
-    @IBAction func switchMode(_ sender: UIBarButtonItem) {
-        lightMode.toggle()
-        switchTheme()
-    }
+//    struct ColorManager {
+//        static let paleYellow = Color("PaleYellow")
+//        static let darkerYellow = Color("DarkerPaleYellow")
+//    }
 
     @IBAction func onTap(_ sender: Any) {
         view.endEditing(true)
@@ -66,5 +106,6 @@ class ViewController: UIViewController {
         totalLabel.text = String(format: "$%.2f", total)
         
     }
+    
 }
 
