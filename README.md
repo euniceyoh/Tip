@@ -4,7 +4,7 @@
 
 Submitted by: **Eunice Oh**
 
-Time spent: **7** hours spent in total
+Time spent: **17** hours spent in total
 
 ## User Stories
 
