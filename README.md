@@ -29,6 +29,8 @@ Here's a walkthrough of implemented user stories:
 
 <img src='https://imgur.com/biiCeOj' title='Video Walkthrough' width='90' alt='Video Walkthrough' />
 
+<blockquote class="imgur-embed-pub" lang="en" data-id="a/CxqI3Uz"  ><a href="//imgur.com/a/CxqI3Uz">tip app</a></blockquote><script async src="//s.imgur.com/min/embed.js" charset="utf-8"></script>
+
 GIF created with [LiceCap](http://www.cockos.com/licecap/).
 
 ## Notes
