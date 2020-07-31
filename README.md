@@ -35,7 +35,7 @@ GIF created with [Giphy](https://giphy.com).
 
 Challenges:
 - understanding how to save/load data from settings view controller to main view controller 
-- choosing which life cycle method to place code to save setting changes
+- choosing which life cycle method to place code that saved changes in settings view controller
 
 ## License
 
